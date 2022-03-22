@@ -20,11 +20,11 @@ function Example() {
     <div>
       <p>You clicked {myCount} times</p>
       <button onClick={() => setMyCount(myCount + 1)}>
-        Click me
+        click me 111
       </button>
       <p>You clicked {myCount2} times</p>
       <button onClick={() => setMyCount2(myCount2 + 1)}>
-        Click me
+        click me 22
       </button>
     </div>
   );
@@ -79,26 +79,42 @@ class ExampleClass extends React.Component {
     return <div>
       <p>You clicked {this.state.count} times</p>
       <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-        Click me
+        Click mee
       </button>
     </div>
   }
 }
 
+
+
+
+
+
+
 function UserGreeting(props) {
-  return <h1>Welcome back!, {props.username}! </h1>;
+  return (<>
+  <h1>Welcome back, {props.username}!</h1>
+  <button onClick={() => props.setLoggedIn(false)}>Sign Out</button>
+
+  <Example></Example>
+  </>)
 }
 
 function GuestGreeting(props) {
-  return <h1>Please sign up!</h1>;
+  return <>
+  <h1>Please sign up.</h1>
+    <input id="input" onKeyUp={(val) => 
+        props.setUsername(document.getElementById("input").value)} ></input>
+      <button onClick={() => props.setLoggedIn(true)}>Sign up</button>
+  </>
 }
 
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
   if (isLoggedIn) {
-    return <UserGreeting username={props.username} />;
+    return <UserGreeting setLoggedIn={props.setloggedIn} username={props.username} />;
   }
-  return <GuestGreeting />;
+  return <GuestGreeting setLoggedIn={props.setLoggedIn} setUsername={props.setUsername} />;
 }
 
 
@@ -107,25 +123,16 @@ function App() {
   const [username, setUsername] = useState("")
   return (
     <div className="App">
-      <Greeting username={username} isLoggedIn={loggedIn} />
-      {
-          !loggedIn ?
-          <> 
-            <input id="input" onKeyUp={(val) => setUsername(document.getElementById("input").value)} ></input>
-          <button onClick={() => setLoggedIn(true)}>Sign up</button>
-          </>
-        :  <button onClick={() => setLoggedIn(false)}>Sign Out</button>
-        
-
-      }
-
-
-      <Timer seconds={90}></Timer>
-      <Example></Example>
-      <ExampleClass></ExampleClass>
+      <Greeting setUsername={setUsername} setLoggedIn={setLoggedIn} 
+        username={username} isLoggedIn={loggedIn} />
 
     </div>
   );
 }
 
 export default App;
+
+{/* <Timer seconds={90}></Timer>
+      <Example></Example>
+      
+      <ExampleClass></ExampleClass> */}
