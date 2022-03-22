@@ -30,6 +30,21 @@ function Example() {
   );
 }
 
+class ExampleClass extends React.Component {
+  constructor() {
+    super()
+    this.state = { count: 0 }
+  }
+  render() {
+    return <div>
+      <p>You clicked {this.state.count} times</p>
+      <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+        Click mee
+      </button>
+    </div>
+  }
+}
+
 
 //Timer
 class Timer extends React.Component {
@@ -70,36 +85,11 @@ class Timer extends React.Component {
 }
 }
 
-class ExampleClass extends React.Component {
-  constructor() {
-    super()
-    this.state = { count: 0 }
-  }
-  render() {
-    return <div>
-      <p>You clicked {this.state.count} times</p>
-      <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-        Click mee
-      </button>
-    </div>
-  }
-}
 
 
 
 
-
-
-
-function UserGreeting(props) {
-  return (<>
-  <h1>Welcome back, {props.username}!</h1>
-  <button onClick={() => props.setLoggedIn(false)}>Sign Out</button>
-
-  <Example></Example>
-  </>)
-}
-
+// Page 1
 function GuestGreeting(props) {
   return <>
   <h1>Please sign up.</h1>
@@ -109,10 +99,23 @@ function GuestGreeting(props) {
   </>
 }
 
+// Page 2
+function UserGreeting(props) {
+  return (<>
+  <h1>Welcome back, {props.username}!</h1>
+  <button onClick={() => props.setLoggedIn(false)}>Sign Out</button>
+  <Timer seconds={90}></Timer>
+  <Example></Example>
+  <ExampleClass></ExampleClass>
+  </>)
+}
+
+
+
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
   if (isLoggedIn) {
-    return <UserGreeting setLoggedIn={props.setloggedIn} username={props.username} />;
+    return <UserGreeting setLoggedIn={props.setLoggedIn} username={props.username} />;
   }
   return <GuestGreeting setLoggedIn={props.setLoggedIn} setUsername={props.setUsername} />;
 }
@@ -132,7 +135,3 @@ function App() {
 
 export default App;
 
-{/* <Timer seconds={90}></Timer>
-      <Example></Example>
-      
-      <ExampleClass></ExampleClass> */}
