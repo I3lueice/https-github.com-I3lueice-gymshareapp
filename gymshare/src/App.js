@@ -107,8 +107,18 @@ function UserGreeting(props) {
   <Timer seconds={90}></Timer>
   <Example></Example>
   <ExampleClass></ExampleClass>
+  
+  
   </>)
 }
+
+// Page 3 
+function cardio(props) {
+  return <>
+    <h1>cardio</h1>
+  </>
+}
+
 
 
 
@@ -128,7 +138,6 @@ function App() {
     <div className="App">
       <Greeting setUsername={setUsername} setLoggedIn={setLoggedIn} 
         username={username} isLoggedIn={loggedIn} />
-
     </div>
   );
 }
