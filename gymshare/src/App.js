@@ -104,23 +104,12 @@ function UserGreeting(props) {
   return (<>
   <h1>Welcome back, {props.username}!</h1>
   <button onClick={() => props.setLoggedIn(false)}>Sign Out</button>
+  <button onClick={() => props.setCalories(false)}>Calories</button>
   <Timer seconds={90}></Timer>
   <Example></Example>
   <ExampleClass></ExampleClass>
-  
-  
   </>)
 }
-
-// Page 3 
-function cardio(props) {
-  return <>
-    <h1>cardio</h1>
-  </>
-}
-
-
-
 
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
@@ -131,13 +120,38 @@ function Greeting(props) {
 }
 
 
+// Page 3 
+function Calories1(props) {
+  return <h1>Calofriefssss</h1>;
+}
+
+function CaloriesPage(props) {
+  const isCaloriesIn = props.isCaloriesIn;
+  if (isCaloriesIn) {
+    return <Calories1 />;
+  }
+    return <GuestGreeting />;
+}
+
+
+
+
+
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [username, setUsername] = useState("")
+  const [caloriesin, setCaloriesIn] = useState(false)
   return (
     <div className="App">
       <Greeting setUsername={setUsername} setLoggedIn={setLoggedIn} 
         username={username} isLoggedIn={loggedIn} />
+
+      <CaloriesPage isCaloriesIn={true} /> {
+        !caloriesin ?
+        <button onClick={() => setCaloriesIn(true)}>asdha</button>
+        : undefined
+      }
+      
     </div>
   );
 }
