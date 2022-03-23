@@ -22,13 +22,57 @@ function Example() {
       <button onClick={() => setMyCount(myCount + 1)}>
         click me 111
       </button>
-      <p>You clicked {myCount2} times</p>
-      <button onClick={() => setMyCount2(myCount2 + 1)}>
-        click me 22
-      </button>
+  
     </div>
   );
 }
+
+// calories tracker
+function CaloriesTracker() {
+  // Declare a new state variable, which we'll call "count"
+  const [myCounter, setMyCounter] = useState(0);
+
+  function decrementCount10() {
+    setMyCounter(prevCounter => prevCounter - 10)
+  }
+
+  function incrementCount10() {
+    setMyCounter(prevCounter => prevCounter + 10)
+  }
+
+  function decrementCount25() {
+    setMyCounter(prevCounter => prevCounter - 25)
+  }
+
+  function incrementCount25() {
+    setMyCounter(prevCounter => prevCounter + 25)
+  }
+
+  function decrementCount100() {
+    setMyCounter(prevCounter => prevCounter - 100)
+  }
+
+  function incrementCount100() {
+    setMyCounter(prevCounter => prevCounter + 100)
+  }
+
+  return (
+    <div>
+      <p>Calories</p>
+      <button onClick={decrementCount100}>-100</button>
+      <button onClick={decrementCount25}>-25</button>
+      <button onClick={decrementCount10}>-10</button>
+      <span>  {myCounter} </span> 
+      <button onClick={incrementCount10}>+10</button>
+      <button onClick={incrementCount25}>+25</button>
+      <button onClick={incrementCount100}>+100</button>
+    </div>
+  );
+}
+
+
+
+
 
 class ExampleClass extends React.Component {
   constructor() {
@@ -89,6 +133,13 @@ class Timer extends React.Component {
 
 
 
+
+
+
+
+
+
+
 // Page 1
 function GuestGreeting(props) {
   return <>
@@ -104,10 +155,12 @@ function UserGreeting(props) {
   return (<>
   <h1>Welcome back, {props.username}!</h1>
   <button onClick={() => props.setLoggedIn(false)}>Sign Out</button>
-  <button onClick={() => props.setCalories(false)}>Calories</button>
+  <button onClick={() => props.setCaloriesIn(false)}>Calories</button>
   <Timer seconds={90}></Timer>
   <Example></Example>
   <ExampleClass></ExampleClass>
+  <CaloriesTracker></CaloriesTracker>
+  
   </>)
 }
 
@@ -122,15 +175,16 @@ function Greeting(props) {
 
 // Page 3 
 function Calories1(props) {
-  return <h1>Calofriefssss</h1>;
+  return <h1></h1>;
 }
 
 function CaloriesPage(props) {
   const isCaloriesIn = props.isCaloriesIn;
   if (isCaloriesIn) {
-    return <Calories1 />;
+    
+    return <Calories1 setCaloriesIn={props.setCaloriesIn} />;
   }
-    return <GuestGreeting />;
+    return <GuestGreeting setLoggedIn={props.setLoggedIn}  />;
 }
 
 
@@ -140,17 +194,16 @@ function CaloriesPage(props) {
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [username, setUsername] = useState("")
-  const [caloriesin, setCaloriesIn] = useState(false)
+  const [caloriesin, setCaloriesIn] = useState(1)
+  
+
   return (
     <div className="App">
       <Greeting setUsername={setUsername} setLoggedIn={setLoggedIn} 
         username={username} isLoggedIn={loggedIn} />
 
-      <CaloriesPage isCaloriesIn={true} /> {
-        !caloriesin ?
-        <button onClick={() => setCaloriesIn(true)}>asdha</button>
-        : undefined
-      }
+      <CaloriesPage setCaloriesIn={setCaloriesIn} 
+      isCaloriesIn={caloriesin} /> 
       
     </div>
   );
