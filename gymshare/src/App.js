@@ -3,14 +3,6 @@ import './App.css';
 import React, { useState, usePrevious, useEffect } from 'react';
 
 
-// function usePrevious(value) {
-//   const ref = useRef();
-//   useEffect(() => {
-//     ref.current = value;
-//   });
-//   return ref.current;
-// }
-
 function Example() {
   // Declare a new state variable, which we'll call "count"
   const [myCount, setMyCount] = useState(0);
@@ -31,6 +23,8 @@ function Example() {
 function CaloriesTracker() {
   // Declare a new state variable, which we'll call "count"
   const [myCounter, setMyCounter] = useState(0);
+  const [myCounter2, setMyCounter2] = useState(0);
+  var totalCalories = myCounter + myCounter2;
 
   function decrementCount10() {
     setMyCounter(prevCounter => prevCounter - 10)
@@ -56,9 +50,33 @@ function CaloriesTracker() {
     setMyCounter(prevCounter => prevCounter + 1000)
   }
 
+ function decrement2Count10() {
+    setMyCounter2(prevCounter2 => prevCounter2 - 10)
+  }
+
+  function increment2Count10() {
+    setMyCounter2(prevCounter2 => prevCounter2 + 10)
+  }
+
+  function decrement2Count100() {
+    setMyCounter2(prevCounter2 => prevCounter2 - 100)
+  }
+
+  function increment2Count100() {
+    setMyCounter2(prevCounter2 => prevCounter2 + 100)
+  }
+
+  function decrement2Count1000() {
+    setMyCounter2(prevCounter2 => prevCounter2 - 1000)
+  }
+
+  function increment2Count1000() {
+    setMyCounter2(prevCounter2 => prevCounter2 + 1000)
+  }
+  
   return (
     <div>
-      <p>Calories</p>
+      <p>Morning Calories</p>
       <button onClick={decrementCount1000}>-1000</button>
       <button onClick={decrementCount100}>-100</button>
       <button onClick={decrementCount10}>-10</button>
@@ -66,9 +84,36 @@ function CaloriesTracker() {
       <button onClick={incrementCount10}>+10</button>
       <button onClick={incrementCount100}>+100</button>
       <button onClick={incrementCount1000}>+1000</button>
+      <p>Afternoon Calories</p>
+      <button onClick={decrement2Count1000}>-1000</button>
+      <button onClick={decrement2Count100}>-100</button>
+      <button onClick={decrement2Count10}>-10</button>
+      <span> {myCounter2} </span> 
+      <button onClick={increment2Count10}>+10</button>
+      <button onClick={increment2Count100}>+100</button>
+      <button onClick={increment2Count1000}>+1000</button>
+      <h4>Total</h4>
+      <span>{totalCalories}</span>
     </div>
+
+    
   );
 }
+
+
+
+// function counterAdd() {
+//   const [myCounter3, setMyCounter3] = useState(0);
+
+//   function cntAdd() {
+//     setMyCounter3(myCounter + myCounter2 )
+//   }
+//   return (
+//     <div>
+
+//     </div>
+//   );
+// } 
 
 
 
@@ -160,6 +205,7 @@ function UserGreeting(props) {
   <Example></Example>
   <ExampleClass></ExampleClass>
   <CaloriesTracker></CaloriesTracker>
+  <counterAdd></counterAdd>
   
   </>)
 }
