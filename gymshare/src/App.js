@@ -40,14 +40,6 @@ function CaloriesTracker() {
     setMyCounter(prevCounter => prevCounter + 10)
   }
 
-  function decrementCount25() {
-    setMyCounter(prevCounter => prevCounter - 25)
-  }
-
-  function incrementCount25() {
-    setMyCounter(prevCounter => prevCounter + 25)
-  }
-
   function decrementCount100() {
     setMyCounter(prevCounter => prevCounter - 100)
   }
@@ -56,16 +48,24 @@ function CaloriesTracker() {
     setMyCounter(prevCounter => prevCounter + 100)
   }
 
+  function decrementCount1000() {
+    setMyCounter(prevCounter => prevCounter - 1000)
+  }
+
+  function incrementCount1000() {
+    setMyCounter(prevCounter => prevCounter + 1000)
+  }
+
   return (
     <div>
       <p>Calories</p>
+      <button onClick={decrementCount1000}>-1000</button>
       <button onClick={decrementCount100}>-100</button>
-      <button onClick={decrementCount25}>-25</button>
       <button onClick={decrementCount10}>-10</button>
-      <span>  {myCounter} </span> 
+      <span> {myCounter} </span> 
       <button onClick={incrementCount10}>+10</button>
-      <button onClick={incrementCount25}>+25</button>
       <button onClick={incrementCount100}>+100</button>
+      <button onClick={incrementCount1000}>+1000</button>
     </div>
   );
 }
