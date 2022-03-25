@@ -281,8 +281,10 @@ function Calories1(props) {
 
 // Page 4 
 function Yoga(props) {
-  return <h1>Calendar</h1>;
-  
+  return <>
+  <h1>Calendar</h1>;
+  <Timer></Timer>
+  </>
 }
 
 
@@ -303,7 +305,7 @@ function App() {
   if (currentExcercise === undefined) {
     currentScreen = <>
      <h1>Welcome to GymShare</h1>
-     <p>This app includes</p>
+     <p> <strong>This app includes:</strong>  a way to track how many calories you intake a day, a timer</p>
     <p><button onClick={() => setCurrentExcercise(exerciseList[0])}>Continue</button> </p>
     
     
