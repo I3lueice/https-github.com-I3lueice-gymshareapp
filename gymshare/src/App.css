@@ -30,7 +30,9 @@
 
 html{
   background-color: whitesmoke;
+  text-align: center;
 }
+
 
 @keyframes App-logo-spin {
   from {
