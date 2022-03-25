@@ -55,115 +55,115 @@ class CaloriesTracker extends React.Component {
 
 // calories tracker
 
-// function CaloriesTracker() {
+function CaloriesTracker2() {
 
-//   const [myCounter, setMyCounter] = useState(0);
-//   const [myCounter2, setMyCounter2] = useState(0);
-//   const [myCounter3, setMyCounter3] = useState(0);
-//   var totalCalories = myCounter + myCounter2 + myCounter3;
-//   function decrementCount10() {
-//     setMyCounter(prevCounter => prevCounter - 10)
-//   }
+  const [myCounter, setMyCounter] = useState(0);
+  const [myCounter2, setMyCounter2] = useState(0);
+  const [myCounter3, setMyCounter3] = useState(0);
+  var totalCalories = myCounter + myCounter2 + myCounter3;
+  function decrementCount10() {
+    setMyCounter(prevCounter => prevCounter - 10)
+  }
 
-//   function incrementCount10() {
-//     setMyCounter(prevCounter => prevCounter + 10)
-//   }
+  function incrementCount10() {
+    setMyCounter(prevCounter => prevCounter + 10)
+  }
 
-//   function decrementCount100() {
-//     setMyCounter(prevCounter => prevCounter - 100)
-//   }
+  function decrementCount100() {
+    setMyCounter(prevCounter => prevCounter - 100)
+  }
 
-//   function incrementCount100() {
-//     setMyCounter(prevCounter => prevCounter + 100)
-//   }
+  function incrementCount100() {
+    setMyCounter(prevCounter => prevCounter + 100)
+  }
 
-//   function decrementCount1000() {
-//     setMyCounter(prevCounter => prevCounter - 1000)
-//   }
+  function decrementCount1000() {
+    setMyCounter(prevCounter => prevCounter - 1000)
+  }
 
-//   function incrementCount1000() {
-//     setMyCounter(prevCounter => prevCounter + 1000)
-//   }
+  function incrementCount1000() {
+    setMyCounter(prevCounter => prevCounter + 1000)
+  }
 
-//  function decrement2Count10() {
-//     setMyCounter2(prevCounter2 => prevCounter2 - 10)
-//   }
+ function decrement2Count10() {
+    setMyCounter2(prevCounter2 => prevCounter2 - 10)
+  }
 
-//   function increment2Count10() {
-//     setMyCounter2(prevCounter2 => prevCounter2 + 10)
-//   }
+  function increment2Count10() {
+    setMyCounter2(prevCounter2 => prevCounter2 + 10)
+  }
 
-//   function decrement2Count100() {
-//     setMyCounter2(prevCounter2 => prevCounter2 - 100)
-//   }
+  function decrement2Count100() {
+    setMyCounter2(prevCounter2 => prevCounter2 - 100)
+  }
 
-//   function increment2Count100() {
-//     setMyCounter2(prevCounter2 => prevCounter2 + 100)
-//   }
+  function increment2Count100() {
+    setMyCounter2(prevCounter2 => prevCounter2 + 100)
+  }
 
-//   function decrement2Count1000() {
-//     setMyCounter2(prevCounter2 => prevCounter2 - 1000)
-//   }
+  function decrement2Count1000() {
+    setMyCounter2(prevCounter2 => prevCounter2 - 1000)
+  }
 
-//   function increment2Count1000() {
-//     setMyCounter2(prevCounter2 => prevCounter2 + 1000)
-//   }
+  function increment2Count1000() {
+    setMyCounter2(prevCounter2 => prevCounter2 + 1000)
+  }
 
-//   function decrement3Count10() {
-//     setMyCounter3(prevCounter3 => prevCounter3 - 10)
-//   }
+  function decrement3Count10() {
+    setMyCounter3(prevCounter3 => prevCounter3 - 10)
+  }
 
-//   function increment3Count10() {
-//     setMyCounter3(prevCounter3 => prevCounter3 + 10)
-//   }
+  function increment3Count10() {
+    setMyCounter3(prevCounter3 => prevCounter3 + 10)
+  }
 
-//   function decrement3Count100() {
-//     setMyCounter3(prevCounter3 => prevCounter3 - 100)
-//   }
+  function decrement3Count100() {
+    setMyCounter3(prevCounter3 => prevCounter3 - 100)
+  }
 
-//   function increment3Count100() {
-//     setMyCounter3(prevCounter3 => prevCounter3 + 100)
-//   }
+  function increment3Count100() {
+    setMyCounter3(prevCounter3 => prevCounter3 + 100)
+  }
 
-//   function decrement3Count1000() {
-//     setMyCounter3(prevCounter3 => prevCounter3 - 1000)
-//   }
+  function decrement3Count1000() {
+    setMyCounter3(prevCounter3 => prevCounter3 - 1000)
+  }
 
-//   function increment3Count1000() {
-//     setMyCounter3(prevCounter3 => prevCounter3 + 1000)
-//   }
+  function increment3Count1000() {
+    setMyCounter3(prevCounter3 => prevCounter3 + 1000)
+  }
 
-//   return (
-//     <div>
-//       <h3>Breakfast Calories</h3>
-//       <button onClick={decrementCount1000}>-1000</button>
-//       <button onClick={decrementCount100}>-100</button>
-//       <button onClick={decrementCount10}>-10</button>
-//       <span> {myCounter} </span> 
-//       <button onClick={incrementCount10}>+10</button>
-//       <button onClick={incrementCount100}>+100</button>
-//       <button onClick={incrementCount1000}>+1000</button>
-//       <h3>Lunch Calories</h3>
-//       <button onClick={decrement2Count1000}>-1000</button>
-//       <button onClick={decrement2Count100}>-100</button>
-//       <button onClick={decrement2Count10}>-10</button>
-//       <span> {myCounter2} </span> 
-//       <button onClick={increment2Count10}>+10</button>
-//       <button onClick={increment2Count100}>+100</button>
-//       <button onClick={increment2Count1000}>+1000</button>
-//       <h3>Dinner Calories</h3>
-//       <button onClick={decrement3Count1000}>-1000</button>
-//       <button onClick={decrement3Count100}>-100</button>
-//       <button onClick={decrement3Count10}>-10</button>
-//       <span> {myCounter3} </span> 
-//       <button onClick={increment3Count10}>+10</button>
-//       <button onClick={increment3Count100}>+100</button>
-//       <button onClick={increment3Count1000}>+1000</button>
-//       <h4>Total</h4>
-//       <span>{totalCalories}</span>
-//     </div>
-//   );
-// }
+  return (
+    <div>
+      <h3>Breakfast Calories</h3>
+      <button onClick={decrementCount1000}>-1000</button>
+      <button onClick={decrementCount100}>-100</button>
+      <button onClick={decrementCount10}>-10</button>
+      <span> {myCounter} </span> 
+      <button onClick={incrementCount10}>+10</button>
+      <button onClick={incrementCount100}>+100</button>
+      <button onClick={incrementCount1000}>+1000</button>
+      <h3>Lunch Calories</h3>
+      <button onClick={decrement2Count1000}>-1000</button>
+      <button onClick={decrement2Count100}>-100</button>
+      <button onClick={decrement2Count10}>-10</button>
+      <span> {myCounter2} </span> 
+      <button onClick={increment2Count10}>+10</button>
+      <button onClick={increment2Count100}>+100</button>
+      <button onClick={increment2Count1000}>+1000</button>
+      <h3>Dinner Calories</h3>
+      <button onClick={decrement3Count1000}>-1000</button>
+      <button onClick={decrement3Count100}>-100</button>
+      <button onClick={decrement3Count10}>-10</button>
+      <span> {myCounter3} </span> 
+      <button onClick={increment3Count10}>+10</button>
+      <button onClick={increment3Count100}>+100</button>
+      <button onClick={increment3Count1000}>+1000</button>
+      <h4>Total</h4>
+      <span>{totalCalories}</span>
+    </div>
+  );
+}
 
 
 
@@ -275,6 +275,7 @@ function Calories1(props) {
   return <>
   <h1>Calories</h1> 
   <CaloriesTracker></CaloriesTracker>
+  <CaloriesTracker2></CaloriesTracker2>
   </>
 }
 
